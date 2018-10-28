@@ -1,7 +1,8 @@
 import React from "react"
 import { Field, reduxForm } from "redux-form"
 import validate from "./validate"
-import renderField from "../../components/renderField"
+import Input from "../../components/Input"
+import Dropdown from "../../components/Dropdown"
 
 const renderError = ({ meta: { touched, error } }) =>
   touched && error ? <span>{error}</span> : false
@@ -9,38 +10,63 @@ const renderError = ({ meta: { touched, error } }) =>
 const WizardFormSecondPage = props => {
   const { handleSubmit, previousPage } = props
   return (
-    <form onSubmit={handleSubmit}>
-      <Field name="email" type="email" component={renderField} label="Email" />
-      <div>
-        <label>Sex</label>
-        <div>
-          <label>
-            <Field
-              name="sex"
-              component="input"
-              type="radio"
-              value="male"
-            />{" "}
-            Male
-          </label>
-          <label>
-            <Field
-              name="sex"
-              component="input"
-              type="radio"
-              value="female"
-            />{" "}
-            Female
-          </label>
-          <Field name="sex" component={renderError} />
+    <form onSubmit={handleSubmit} className='register-form'>
+
+      <div className="row">
+        <div className="col col-8">
+          <Field
+            name="street"
+            type="text"
+            component={Input}
+            label="Calle"
+            placeholder="Ej.: Av. de Mayo"
+          />
+        </div>
+        <div className="col col-4">
+          <Field
+            name="number"
+            type="text"
+            component={Input}
+            label="Número"
+            placeholder="Ej.: 3651"
+          />
         </div>
       </div>
-      <div>
+
+      <div className="row">
+        <div className="col col-6">
+          <Field
+            name="province"
+            component={Dropdown}
+            label="Provincia"
+          >
+            <option>a</option>
+            <option>b</option>
+            <option>c</option>
+          </Field>
+            {/* <Field name="sex" component={renderError} /> */}
+        </div>
+      
+        <div className="col col-6">
+          <Field
+            name="locality"
+            component={Dropdown}
+            label="Localidad"
+          >
+            <option>a</option>
+            <option>b</option>
+            <option>c</option>
+          </Field>
+            {/* <Field name="sex" component={renderError} /> */}
+        </div>
+      </div>
+
+      <div className="form-footer">
         <button type="button" className="previous" onClick={previousPage}>
-          Previous
+          Atrás
         </button>
-        <button type="submit" className="next">
-          Next
+        <button type="submit" className="next blue">
+          Siguiente
         </button>
       </div>
     </form>

@@ -1,27 +1,28 @@
 import React from "react"
 import { Field, reduxForm } from "redux-form"
 import validate from "./validate"
-import renderField from "../../components/renderField"
+import Input from "../../components/Input"
 
 const WizardFormFirstPage = props => {
   const { handleSubmit } = props
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className='register-form'>
       <Field
-        name="firstName"
+        name="name"
         type="text"
-        component={renderField}
-        label="First Name"
+        component={Input}
+        label="Nombre completo"
       />
       <Field
-        name="lastName"
+        name="cuil"
         type="text"
-        component={renderField}
-        label="Last Name"
+        component={Input}
+        label="Nº de CUIL"
+        placeholder="Ej,: 23-45678901-2"
       />
-      <div>
-        <button type="submit" className="next">
-          Next
+      <div className="form-footer flex-end">
+        <button type="submit" className="next blue">
+          Siguiente
         </button>
       </div>
     </form>
