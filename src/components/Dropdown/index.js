@@ -8,6 +8,11 @@ export default ({ input, label, children, meta: { touched, error } }) =>
       <select {...input} placeholder={label}>
         { children }
       </select>
-      {touched && error && <span>{error}</span>}
+
+      {
+        touched && (error &&
+          <p className="input-error">{error}</p>)
+      }
+
     </div>
   </div>

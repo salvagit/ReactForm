@@ -24,7 +24,7 @@ const WizardFormSecondPage = props => {
         </div>
         <div className="col col-4">
           <Field
-            name="number"
+            name="streetNumber"
             type="text"
             component={Input}
             label="Número"

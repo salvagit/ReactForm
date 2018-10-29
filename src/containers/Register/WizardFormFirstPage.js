@@ -15,7 +15,7 @@ const WizardFormFirstPage = props => {
       />
       <Field
         name="cuil"
-        type="text"
+        type="number"
         component={Input}
         label="Nº de CUIL"
         placeholder="Ej,: 23-45678901-2"

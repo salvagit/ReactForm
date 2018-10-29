@@ -5,5 +5,9 @@ import './styles.scss';
 
 export default () =>
 <div className='register-container'>
-  <Form />
+  <Form
+    onSubmit = { (data) => {
+      console.log("ON SUBMIT", data)
+    } }
+  />
 </div>
