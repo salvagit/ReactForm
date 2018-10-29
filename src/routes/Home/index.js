@@ -2,8 +2,10 @@ import React from "react";
 import "./styles.scss";
 import check from "./check.svg";
 
-export default () =>
+const Home = () =>
   <div className="home-container">
     <img src = { check } />
     <h2>¡Te registraste exitosamente!</h2>
-  </div>
+  </div>;
+
+export default Home;

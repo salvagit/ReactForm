@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { push } from "connected-react-router";
-import { connect} from 'react-redux';
+import { connect} from "react-redux";
 
 class App extends Component {
 
@@ -9,10 +9,10 @@ class App extends Component {
     super(props);
     this.state = {
       isLogged: false
-    }
+    };
   }
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     this.setState(
       { isLogged: localStorage["isLogged"] },
       () => {
@@ -43,5 +43,9 @@ const mapStateTopProps = state => ({
 const mapDispatchTopProps = dispatch => ({
   redirect: url => dispatch(push(url))
 });
+
+App.propTypes = {
+  redirect: PropTypes.string.isRequired
+};
 
 export default connect(mapStateTopProps, mapDispatchTopProps)(App);

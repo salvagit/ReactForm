@@ -1,9 +1,9 @@
-import React, { Component } from "react"
-import './styles.scss';
+import React from "react";
+import "./styles.scss";
 
-export default ({ placeholder, label, input, type, meta: { touched, error, valid }, ...inputProps }) =>
+const Input = ({ placeholder, label, input, type, meta: { touched, error, valid }, ...inputProps }) =>
   <div className={["input-container", type].join(" ")}>
-    <label for={input.name}>{label}</label>
+    <label htmlFor={input.name}>{label}</label>
     <div>
       <input
         id={input.name}
@@ -22,4 +22,14 @@ export default ({ placeholder, label, input, type, meta: { touched, error, valid
       }
 
     </div>
-  </div>
+  </div>;
+
+Input.propTypes = {
+  input: PropTypes.object.isRequired,
+  placeholder: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  meta: PropTypes.object.isRequired
+};
+
+export default Input;

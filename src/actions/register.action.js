@@ -4,7 +4,7 @@ import {
   REGISTER_ERROR
 } from "./types";
 
-import { push } from 'connected-react-router';
+import { push } from "connected-react-router";
 
 // Register
 export const onRegisterStart = () => ({ type: REGISTER_START });
@@ -22,6 +22,6 @@ export function register() {
         dispatch(push("/home"));
       }
     })
-    .catch(error => dispatch(onRegisterError(error)))
-  }
+    .catch(error => dispatch(onRegisterError(error)));
+  };
 }

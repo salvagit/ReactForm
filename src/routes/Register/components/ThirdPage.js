@@ -1,15 +1,15 @@
-import React, { Component } from "react"
-import { Field, reduxForm } from "redux-form"
-import validate from "../validate"
-import Input from "../../../components/Input"
+import React, { Component } from "react";
+import { Field, reduxForm } from "redux-form";
+import validate from "../validate";
+import Input from "../../../components/Input";
 
-class WizardFormThirdPage extends Component {
+class ThirdPage extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
       showPass: true
-    }
+    };
   }
 
   showPass = () => this.setState({ showPass: !this.state.showPass });
@@ -43,18 +43,27 @@ class WizardFormThirdPage extends Component {
         <div className="form-footer">
           <button type="button" className="previous" onClick={previousPage}>
             Atrás
-        </button>
+          </button>
           <button type="submit" disabled={pristine || submitting} className="blue">
             Finalizar
-        </button>
+          </button>
         </div>
       </form>
     );
   }
 }
+
+ThirdPage.propTypes = {
+  error: PropTypes.string,
+  handleSubmit: PropTypes.func.isRequired,
+  submitting: PropTypes.func.isRequired,
+  previousPage: PropTypes.func.isRequired,
+  pristine: PropTypes.object.isRequired,
+};
+
 export default reduxForm({
-  form: "wizard", //Form name is same
+  form: "register-form", //Form name is same
   destroyOnUnmount: false,
   forceUnregisterOnUnmount: true, // <------ unregister fields on unmount
   validate
-})(WizardFormThirdPage)
+})(ThirdPage);

@@ -1,10 +1,10 @@
-import React from "react"
-import { Field, reduxForm } from "redux-form"
-import validate from "../validate"
-import Input from "../../../components/Input"
+import React from "react";
+import { Field, reduxForm } from "redux-form";
+import validate from "../validate";
+import Input from "../../../components/Input";
 
-const WizardFormFirstPage = props => {
-  const { handleSubmit } = props
+const FirstPage = props => {
+  const { handleSubmit } = props;
   return (
     <form onSubmit={handleSubmit} className='register-form'>
       <Field
@@ -26,11 +26,17 @@ const WizardFormFirstPage = props => {
         </button>
       </div>
     </form>
-  )
-}
+  );
+};
+
+FirstPage.propTypes = {
+  error: PropTypes.string,
+  handleSubmit: PropTypes.func.isRequired
+};
+
 export default reduxForm({
-  form: "wizard", // <------ same form name
+  form: "register-form", // <------ same form name
   destroyOnUnmount: false, // <------ preserve form data
   forceUnregisterOnUnmount: true, // <------ unregister fields on unmount
   validate
-})(WizardFormFirstPage)
+})(FirstPage);

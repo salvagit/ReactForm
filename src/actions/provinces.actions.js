@@ -25,8 +25,8 @@ export function getProvinces() {
     .then(data => {
       dispatch(onGetProvincesSuccess(data));
     })
-    .catch(error => dispatch(onGetProvincesError(error)))
-  }
+    .catch(error => dispatch(onGetProvincesError(error)));
+  };
 }
 
 export function getLocality(id = null) {
@@ -38,6 +38,6 @@ export function getLocality(id = null) {
     .then(data => {
       dispatch(onGetLocalitySuccess(data));
     })
-    .catch(error => dispatch(onGetLocalityError(error)))
-  }
+    .catch(error => dispatch(onGetLocalityError(error)));
+  };
 }

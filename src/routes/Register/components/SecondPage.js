@@ -1,10 +1,10 @@
-import React, { Component } from "react"
-import { Field, reduxForm } from "redux-form"
-import validate from "../validate"
-import Input from "../../../components/Input"
+import React, { Component } from "react";
+import { Field, reduxForm } from "redux-form";
+import validate from "../validate";
+import Input from "../../../components/Input";
 import ProvinceLocality from "../../../components/ProvinceLocality";
 
-class WizardFormSecondPage extends Component {
+class SecondPage extends Component {
 
   render() {
     let { handleSubmit, previousPage } = this.props;
@@ -37,20 +37,25 @@ class WizardFormSecondPage extends Component {
         <div className="form-footer">
           <button type="button" className="previous" onClick={previousPage}>
             Atrás
-        </button>
+          </button>
           <button type="submit" className="next blue">
             Siguiente
-        </button>
+          </button>
         </div>
       </form>
-
     );
   }
 }
 
+SecondPage.propTypes = {
+  error: PropTypes.string,
+  handleSubmit: PropTypes.func.isRequired,
+  previousPage: PropTypes.func.isRequired,
+};
+
 export default reduxForm({
-  form: "wizard", //Form name is same
+  form: "register-form", //Form name is same
   destroyOnUnmount: false,
   forceUnregisterOnUnmount: true, // <------ unregister fields on unmount
   validate
-})(WizardFormSecondPage);
+})(SecondPage);

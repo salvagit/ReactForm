@@ -1,8 +1,8 @@
 import React from "react";
 import { render } from "react-dom";
 import { Provider } from "react-redux";
-import { Switch, Route } from 'react-router-dom'
-import { ConnectedRouter } from 'connected-react-router'
+import { Switch, Route } from "react-router-dom";
+import { ConnectedRouter } from "connected-react-router";
 
 import store, { history } from "./store";
 

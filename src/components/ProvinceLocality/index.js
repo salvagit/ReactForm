@@ -1,13 +1,13 @@
 import React, { Component } from "react";
-import { connect } from 'react-redux';
-import { Field } from "redux-form"
+import { connect } from "react-redux";
+import { Field } from "redux-form";
 
-import Dropdown from "../../components/Dropdown"
-import { getProvinces, getLocality } from '../../actions/provinces.actions';
+import Dropdown from "../../components/Dropdown";
+import { getProvinces, getLocality } from "../../actions/provinces.actions";
 
 class ProvinceLocality extends Component {
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     this.props.getProvinces();
   }
 
@@ -39,13 +39,19 @@ class ProvinceLocality extends Component {
 
 const mapStateTopProps = state => ({
   provinces: state.provinces.provinces,
-  cities: state.provinces.locality.cities,
-  state
+  cities: state.provinces.locality.cities
 });
 
 const mapDispatchTopProps = dispatch => ({
   getProvinces: () => dispatch(getProvinces()),
   getLocality: province_id => dispatch(getLocality(province_id))
 });
+
+ProvinceLocality.propTypes = {
+  getProvinces: PropTypes.func.isRequired,
+  getLocality: PropTypes.func.isRequired,
+  provinces: PropTypes.array.isRequired,
+  cities: PropTypes.array.isRequired,
+};
 
 export default connect(mapStateTopProps, mapDispatchTopProps)(ProvinceLocality);
