@@ -1,8 +1,8 @@
 import React, { Component } from "react"
 import { Field, reduxForm } from "redux-form"
-import validate from "./validate"
-import Input from "../../components/Input"
-import ProvinceLocality from "../../components/ProvinceLocality";
+import validate from "../validate"
+import Input from "../../../components/Input"
+import ProvinceLocality from "../../../components/ProvinceLocality";
 
 class WizardFormSecondPage extends Component {
 

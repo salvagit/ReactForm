@@ -1,16 +1,25 @@
-/* global document */
-
 import React from "react";
 import { render } from "react-dom";
 import { Provider } from "react-redux";
+import { Switch, Route } from 'react-router-dom'
+import { ConnectedRouter } from 'connected-react-router'
 
-import App from "./App";
-import store from "./store";
+import store, { history } from "./store";
 
-// By using <Provider />, the store will be made available for all the components in your application.
+import App from "./routes/App";
+import Register from "./routes/Register";
+import Home from "./routes/Home";
 
 render(
   <Provider store={store}>
-    <App />
+    <ConnectedRouter history={history}>
+      <div>
+        <Switch>
+          <Route path="/" component={App} exact={true} />
+          <Route path="/register" component={Register} exact={true} />
+          <Route path="/home" component={Home} exact={true} />
+        </Switch>
+      </div>
+    </ConnectedRouter>
   </Provider>, document.getElementById("root")
 );

@@ -1,7 +1,7 @@
 import React from "react"
 import { Field, reduxForm } from "redux-form"
-import validate from "./validate"
-import Input from "../../components/Input"
+import validate from "../validate"
+import Input from "../../../components/Input"
 
 const WizardFormFirstPage = props => {
   const { handleSubmit } = props

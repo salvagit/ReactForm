@@ -11,6 +11,14 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.(pdf|jpg|png|gif|svg|ico)$/,
+        use: [
+          {
+            loader: 'url-loader'
+          },
+        ]
+      },
+      {
         test: /\.scss/,
         loader: ExtractTextPlugin.extract(["css-loader", "sass-loader"])
       },

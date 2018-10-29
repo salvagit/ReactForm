@@ -32,7 +32,7 @@ export default function (state = INITIAL_STATE, action) {
     case GET_LOCALITY_ERROR:
       return { ...state, isLoading: false };
 
-      default:
+    default:
       return state;
   }
 }
