@@ -1,12 +1,7 @@
-// ActionTypes are defined in constants.
+export const GET_PROVINCES_START = "GET_PROVINCES_START";
+export const GET_PROVINCES_SUCCESS = "GET_PROVINCES_SUCCESS";
+export const GET_PROVINCES_ERROR = "GET_PROVINCES_ERROR";
 
-// They are imported in Actions and Reducers.
-// This prevents errors if they are misspelled over here.
-
-/* eslint-disable */
-
-export const INCREMENT_NUM = "INCREMENT_NUM";
-export const DECREMENT_NUM = "DECREMENT_NUM";
-export const RESET = "RESET";
-
-/* eslint-enable */
+export const GET_LOCALITY_START = "GET_LOCALITY_START";
+export const GET_LOCALITY_SUCCESS = "GET_LOCALITY_SUCCESS";
+export const GET_LOCALITY_ERROR = "GET_LOCALITY_ERROR";

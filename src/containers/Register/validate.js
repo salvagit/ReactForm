@@ -28,8 +28,9 @@ const validate = values => {
 
   if (!values.street) { errors.street = "ingrese una calle" }
   if (!values.streetNumber) { errors.streetNumber = "ingrese altura" }
-  if (!values.locality) { errors.locality = "ingrese localidad" }
-  if (!values.province) { errors.province = "ingrese provicia" }
+
+  if (!values.locality || values.locality == -1) { errors.locality = "seleccione localidad" }
+  if (!values.province || values.province == -1) { errors.province = "seleccione provicia" }
 
   // if (!values.favoriteColor) { errors.favoriteColor = "Required" }
 

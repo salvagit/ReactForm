@@ -1,12 +1,23 @@
 import React from "react";
 import "./styles.scss";
 
-export default ({ input, label, children, meta: { touched, error } }) =>
+export default ({ input, label, options = [], callback, meta: { touched, error }, ...props }) =>
   <div className="dropdown-container" >
     <label>{label}</label>
     <div>
-      <select {...input} placeholder={label}>
-        { children }
+      <select
+        {...input}
+        placeholder={label}
+        onChange = { evt => {
+          if( "function" === typeof callback) callback(evt.target.value);
+          return input.onChange(evt);
+        }}
+      >
+        <option value="-1">Seleccionar</option>
+        {
+          options.length &&
+          options.map( el => <option value={el.id}>{ el.name }</option> )
+        }
       </select>
 
       {

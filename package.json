@@ -5,12 +5,15 @@
   "watch": true,
   "dependencies": {
     "express": "^4.16.3",
+    "history": "^4.7.2",
     "prop-types": "^15.6.2",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
-    "react-redux": "^5.0.7",
+    "react-redux": "^5.1.0",
+    "react-router-redux": "^4.0.8",
     "redux": "^3.7.2",
-    "redux-form": "^7.4.2"
+    "redux-form": "^7.4.2",
+    "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",

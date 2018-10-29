@@ -3,13 +3,15 @@ import './styles.scss';
 
 export default ({ placeholder, label, input, type, meta: { touched, error, valid }, ...inputProps }) =>
   <div className={["input-container", type].join(" ")}>
-    <label>{label}</label>
+    <label for={input.name}>{label}</label>
     <div>
       <input
+        id={input.name}
         {...inputProps}
+        value={input.value}
         onBlur={input.onBlur}
         onFocus={input.onFocus}
-        onChange={evt => input.value = evt.target.value}
+        onChange={input.onChange}
         placeholder={placeholder || label}
         type={type}
       />
