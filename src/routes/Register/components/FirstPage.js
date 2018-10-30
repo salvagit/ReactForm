@@ -3,11 +3,12 @@ import { Field, reduxForm } from "redux-form";
 import { PropTypes } from "prop-types";
 import validate from "../validate";
 import Input from "../../../components/Input";
+import MaskedInput from "../../../components/MaskedInput";
 
 const FirstPage = props => {
   const { handleSubmit } = props;
   return (
-    <form onSubmit={handleSubmit} className='register-form'>
+    <form onSubmit={handleSubmit} className="register-form">
       <Field
         name="name"
         type="text"
@@ -16,8 +17,8 @@ const FirstPage = props => {
       />
       <Field
         name="cuil"
-        type="number"
-        component={Input}
+        mask={[/[1-9]/, /\d/, "-", /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, "-", /\d/]}
+        component={MaskedInput}
         label="Nº de CUIL"
         placeholder="Ej,: 23-45678901-2"
       />

@@ -9,10 +9,15 @@ const validate = values => {
   }
 
   // El número de CUIL debe tener 11 dígitos.
-  if (!values.cuil) {
-    errors.cuil = "ingrese su CUIL";
-  } else if (values.cuil.length !== 11) {
-    errors.cuil = "El número de CUIL debe tener 11 dígitos";
+  if (!values.cuil) errors.cuil = "ingrese su CUIL";
+  else {
+    let vcuil = values.cuil;
+    vcuil = vcuil
+      .replace(/-/gi,"")
+      .replace(/_/gi, "");
+    if (vcuil.length !== 11) {
+      errors.cuil = "El número de CUIL debe tener 11 dígitos";
+    }
   }
 
   if (!values.email) {

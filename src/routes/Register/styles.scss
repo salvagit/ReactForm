@@ -18,7 +18,6 @@
     padding: 40px;
 
     .form-header {
-      // margin-bottom: 30px;
       display: flex;
       justify-content: space-between;
 
@@ -29,6 +28,7 @@
 
     .register-form {
       height: 30vh;
+      min-height: 300px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;

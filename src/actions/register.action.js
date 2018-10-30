@@ -11,10 +11,22 @@ export const onRegisterStart = () => ({ type: REGISTER_START });
 export const onRegisterSuccess = data => ({ type: REGISTER_SUCCESS, data });
 export const onRegisterError = error => ({ type: REGISTER_ERROR, error });
 
-export function register() {
+export function register(data) {
   return dispatch => {
     dispatch(onRegisterStart());
-    fetch("http://www.mocky.io/v2/5bd736483500002f3ffd8008", { method: "POST" })
+    data.cuil = data.cuil.replace(/-/gi, "");
+    console.log("submited data", data);
+    fetch(
+      "http://www.mocky.io/v2/5bd736483500002f3ffd8008",
+      {
+        method: "POST",
+        headers: {
+          "Accept": "application/json",
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+      }
+    )
     .then(data => data.json())
     .then(data => {
       if (data.success) {

@@ -17,7 +17,6 @@ export default function (state = INITIAL_STATE, action) {
     case REGISTER_START:
       return { ...state, isLoading: true };
     case REGISTER_SUCCESS:
-      console.log("ON REDUCER", action);
       return { ...state, success: true, data: action.data, isLoading: false };
     case REGISTER_ERROR:
       return { ...state, isLoading: false };
