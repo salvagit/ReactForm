@@ -3,7 +3,7 @@
 # React Step Form
 A simple example of a steps form with validation.
 
-basado en [React-Redux-Sass-Starter](https://github.com/Gigacore/React-Redux-Sass-Starter)
+based on [React-Redux-Sass-Starter](https://github.com/Gigacore/React-Redux-Sass-Starter)
 
 ### Get started!
 ```
