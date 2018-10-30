@@ -1,4 +1,5 @@
 import React from "react";
+import { PropTypes } from "prop-types";
 import "./styles.scss";
 
 const Input = ({ placeholder, label, input, type, meta: { touched, error, valid }, ...inputProps }) =>

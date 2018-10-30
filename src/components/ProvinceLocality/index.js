@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Field } from "redux-form";
+import { PropTypes } from "prop-types";
 
 import Dropdown from "../../components/Dropdown";
 import { getProvinces, getLocality } from "../../actions/provinces.actions";

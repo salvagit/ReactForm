@@ -1,5 +1,6 @@
 import React from "react";
 import { Field, reduxForm } from "redux-form";
+import { PropTypes } from "prop-types";
 import validate from "../validate";
 import Input from "../../../components/Input";
 
